@@ -1,0 +1,134 @@
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 500% 500%;
+    animation: gradient 15s ease infinite;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.content {
+    padding-left: 3vw;
+    padding-top: 2vw;
+    padding-right: 5vw;
+    color: #FFFFFF;
+
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h1 {
+    font-family: Euclid Circular A, Arial Black, Candara, sans-serif;
+    font-size: 5vw !important;
+    font-weight: bold;
+    font-variant: small-caps;
+    text-transform: uppercase;
+
+    max-width: 40%;
+    align-self: flex-end;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding-top: 5vh;
+    padding-left: 2vw;
+}
+
+.todo-list {
+    padding-right: 2rem;
+    max-width: 30vw;
+}
+
+#add {
+    margin-top: 1rem;
+}
+
+.todo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    perspective: 1px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 2px 2px 3px #455a64 ;
+
+    margin-top: 1vh;
+    padding: .3vh 4vh 1vh 1vh;
+    max-width: 100%;
+}
+
+.todo:not(:first-child) {
+    margin-top: 2vh;
+}
+
+.todo-text-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 7vh;
+    margin-top: .5vh;
+}
+
+.done-checkbox {
+    margin-right: .5rem;
+    padding-top: .5vh;
+    height: 7vh;
+    width: 5vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+.checkbox-orange[type="checkbox"].filled-in:not(:checked) + span:not(.lever)::after {
+    top: calc(50% - 10px) !important;
+    left: calc(50% - 10px);
+}
+
+.checkbox-orange[type="checkbox"].filled-in:checked + span:not(.lever):after {
+    border: 2px solid #ff5722;
+    background-color: #ff5722;
+
+    top: calc(50% - 10px) !important;
+    left: calc(50% - 10px);
+}
+
+.title {
+    font-weight: bold;
+    font-size: x-large;
+
+    height: 7vh;
+
+    display: flex;
+    align-items: center;
+}
+
+.description {
+    text-align: justify;
+
+    margin-left: calc(5vh + .5rem);
+    margin-top: 0;
+}
